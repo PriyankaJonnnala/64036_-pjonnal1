@@ -1,0 +1,61 @@
+---
+title: "BA Assignment 1"
+author: "Priyanka Jonnala"
+date: "2023-09-30"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+#installed the ISLR package using install.packages("ISLR").
+```{r}
+library(ISLR)
+```
+#Calling the ISLR library
+```{r}
+summary(Carseats)
+```
+#printing the summary of carseats dataset
+```{r}
+View(Carseats)
+```
+#viewing the carseats dataset
+```{r}
+str(Carseats)
+```
+#printing the structure of carseats dataset.
+#This dataset contains 400 observations of 11 variables.
+```{r}
+head(Carseats,20)
+```
+#Printing the first 20 rows of carseats dataset.
+```{r}
+max(Carseats$Advertising)
+```
+#Maximum value of Advertising attribute
+```{r}
+IQR(Carseats$Price)
+```
+#IQR(Interquartile) of price attribute
+```{r}
+x <- Carseats$Sales
+y <- Carseats$Price
+plot(x,y,main = "scatterplot",xlab = "Sales",ylab = "Price")
+abline(lm(Carseats$Price~Carseats$Sales) ,col="Blue",lwd=2)
+```
+#This plot shows the regression line of sales and price and it has a negative slope,implying a negative correlation,and the value ranges from 0 to -1.
+```{r}
+correlation <- cor.test(Carseats$Sales,Carseats$Price,method = "pearson")
+correlation
+```
+#Calculating the correlation of two attributes.The correlation coffecient is -0.44,it indicated that it is in negative direction.The strength of the relationship will be moderate if one variable increases and the other variable decreases.
+
+
+
+
+
+
+
+
+
